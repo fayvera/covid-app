@@ -10,5 +10,6 @@ class Cli
         puts "Please enter date for when you would like COVID-19 case stats:"
         puts "Date format = mm/dd/yyyy"
         input = gets.strip
+        Api.cases_by_date
     end
 end
