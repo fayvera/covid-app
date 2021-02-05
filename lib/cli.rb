@@ -1,8 +1,3 @@
-require 'pry'
-require 'httparty'
-
-require_relative('../lib/api')
-require_relative('../lib/model')
 class Cli
 
     def welcome
@@ -77,6 +72,7 @@ class Cli
     end
 
     def exit_program
+        puts ""
         puts "Thank you visiting and stay safe!"
         puts ""
         exit
@@ -89,13 +85,15 @@ class Cli
         puts "#{"3.".green} Manhattan"
         puts "#{"4.".green} Queens"
         puts "#{"5.".green} Staten Island"
-        puts "6. Select a new date"
-        puts "7. Select a new Borough"
+        puts "#{"6.".green} Select a new date"
+        puts "#{"7.".green} Select a new Borough"
         puts "#{"8.".yellow} Exit application"
         puts ""
         input = gets.strip
+        # Model.
             if input == "1" || input == "1." 
                 self.bronx_stats(date)
+                # self.stats(date, "Bronx", )
             elsif input == "2" || input == "2." 
                 self.brooklyn_stats(date)
             elsif input == "3" || input == "3." 
@@ -160,6 +158,14 @@ class Cli
         self.pick_borough(date)
     end
 
+    # def stats(date, borough, count)
+    #     puts ""
+    #     puts "The number of positive cases for #{"#{date.date_of_interest}".light_blue} in #{borough} is: #{"#{date.si_case_count}".red}."
+    #     puts "The number of people hospitalized within 14 days of diagnosis on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.si_hospitalized_count}".red}."
+    #     puts "The number of deaths with a positive molecular test on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.si_death_count}".red}."
+    #     puts ""
+    #     self.pick_borough(date)
+    # end
 
 
 end

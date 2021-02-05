@@ -1,10 +1,3 @@
-require 'pry'
-require 'httparty'
-
-
-# require_relative('../lib/api')
-require_relative('../lib/cli')
-require_relative('../lib/model')
 class Api
     @@api_key = "20210203123346"
     @@url = "https://data.cityofnewyork.us/resource/rc75-m7u3.json"
@@ -24,4 +17,4 @@ class Api
 end
 
 
-Api.new.cases_by_date
+# Api.new.cases_by_date

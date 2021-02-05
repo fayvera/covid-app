@@ -1,10 +1,3 @@
-require 'pry'
-require 'httparty'
-
-require_relative('../lib/api')
-require_relative('../lib/cli')
-# require_relative('../lib/model')
-
 class Model
 attr_accessor :date_of_interest, :case_count, :hospitalized_count, :death_count, 
 :bx_case_count, :bx_hospitalized_count, :bx_death_count, 
@@ -31,10 +24,8 @@ attr_accessor :date_of_interest, :case_count, :hospitalized_count, :death_count,
     def self.find_by_date(date)
         @@all.find do |kase|
             kase.date_of_interest == date
-            # binding.pry
         end
     end
-   
 
 end
 
