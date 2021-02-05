@@ -86,8 +86,7 @@ class Cli
         puts "#{"4.".green} Queens"
         puts "#{"5.".green} Staten Island"
         puts "#{"6.".green} Select a new date"
-        puts "#{"7.".green} Select a new Borough"
-        puts "#{"8.".yellow} Exit application"
+        puts "#{"7.".yellow} Exit application"
         puts ""
         input = gets.strip
             if input == "1" || input == "1." 
@@ -102,9 +101,7 @@ class Cli
                 self.stats(date, "Staten Island", "si")
             elsif input == "6" || input == "6." 
                 self.prompt_date
-            elsif input == "7" || input == "7." 
-                self.pick_borough(date)
-            elsif input == "8" || input == "8." || input == "exit" || input == "Exit"
+            elsif input == "7" || input == "7." || input == "exit" || input == "Exit"
                 self.exit_program
             else
                 puts "#{"Invalid response.".yellow}"
