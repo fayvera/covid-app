@@ -90,18 +90,16 @@ class Cli
         puts "#{"8.".yellow} Exit application"
         puts ""
         input = gets.strip
-        # Model.
             if input == "1" || input == "1." 
-                self.bronx_stats(date)
-                # self.stats(date, "Bronx", )
+                self.stats(date, "Bronx", "bx")
             elsif input == "2" || input == "2." 
-                self.brooklyn_stats(date)
+                self.stats(date, "Brooklyn", "bk")
             elsif input == "3" || input == "3." 
-                self.manhattan_stats(date)
+                self.stats(date, "Manhattan", "mn")
             elsif input == "4" || input == "4." 
-                self.queens_stats(date)
+                self.stats(date, "Queens", "qn")
             elsif input == "5" || input == "5." 
-                self.staten_island_stats(date)
+                self.stats(date, "Staten Island", "si")
             elsif input == "6" || input == "6." 
                 self.prompt_date
             elsif input == "7" || input == "7." 
@@ -116,56 +114,56 @@ class Cli
     end
 
 
-    def bronx_stats(date)
-        puts ""
-        puts "The number of positive cases for #{"#{date.date_of_interest}".light_blue} in Bronx is: #{"#{date.bx_case_count}".red}."
-        puts "The number of people hospitalized within 14 days of diagnosis on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.bx_hospitalized_count}".red}."
-        puts "The number of deaths with a positive molecular test on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.bx_death_count}".red}."
-        puts ""
-        self.pick_borough(date)
-    end
-    def brooklyn_stats(date)
-        puts ""
-        puts "The number of positive cases for #{"#{date.date_of_interest}".light_blue} in Brooklyn is: #{"#{date.bk_case_count}".red}."
-        puts "The number of people hospitalized within 14 days of diagnosis on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.bk_hospitalized_count}".red}."
-        puts "The number of deaths with a positive molecular test on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.bk_death_count}".red}."
-        puts ""
-        self.pick_borough(date)
-
-    end
-    def manhattan_stats(date)
-        puts ""
-        puts "The number of positive cases for #{"#{date.date_of_interest}".light_blue} in Manhattan is: #{"#{date.mn_case_count}".red}."
-        puts "The number of people hospitalized within 14 days of diagnosis on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.mn_hospitalized_count}".red}."
-        puts "The number of deaths with a positive molecular test on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.mn_death_count}".red}."
-        puts ""
-        self.pick_borough(date)
-    end
-    def queens_stats(date)
-        puts ""
-        puts "The number of positive cases for #{"#{date.date_of_interest}".light_blue} in Queens is: #{"#{date.qn_case_count}".red}."
-        puts "The number of people hospitalized within 14 days of diagnosis on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.qn_hospitalized_count}".red}."
-        puts "The number of deaths with a positive molecular test on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.qn_death_count}".red}."
-        puts ""
-        self.pick_borough(date)
-    end
-    def staten_island_stats(date)
-        puts ""
-        puts "The number of positive cases for #{"#{date.date_of_interest}".light_blue} in Staten Island is: #{"#{date.si_case_count}".red}."
-        puts "The number of people hospitalized within 14 days of diagnosis on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.si_hospitalized_count}".red}."
-        puts "The number of deaths with a positive molecular test on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.si_death_count}".red}."
-        puts ""
-        self.pick_borough(date)
-    end
-
-    # def stats(date, borough, count)
+    # def bronx_stats(date)
     #     puts ""
-    #     puts "The number of positive cases for #{"#{date.date_of_interest}".light_blue} in #{borough} is: #{"#{date.si_case_count}".red}."
+    #     puts "The number of positive cases for #{"#{date.date_of_interest}".light_blue} in Bronx is: #{"#{date.bx_case_count}".red}."
+    #     puts "The number of people hospitalized within 14 days of diagnosis on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.bx_hospitalized_count}".red}."
+    #     puts "The number of deaths with a positive molecular test on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.bx_death_count}".red}."
+    #     puts ""
+    #     self.pick_borough(date)
+    # end
+    # def brooklyn_stats(date)
+    #     puts ""
+    #     puts "The number of positive cases for #{"#{date.date_of_interest}".light_blue} in Brooklyn is: #{"#{date.bk_case_count}".red}."
+    #     puts "The number of people hospitalized within 14 days of diagnosis on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.bk_hospitalized_count}".red}."
+    #     puts "The number of deaths with a positive molecular test on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.bk_death_count}".red}."
+    #     puts ""
+    #     self.pick_borough(date)
+
+    # end
+    # def manhattan_stats(date)
+    #     puts ""
+    #     puts "The number of positive cases for #{"#{date.date_of_interest}".light_blue} in Manhattan is: #{"#{date.mn_case_count}".red}."
+    #     puts "The number of people hospitalized within 14 days of diagnosis on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.mn_hospitalized_count}".red}."
+    #     puts "The number of deaths with a positive molecular test on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.mn_death_count}".red}."
+    #     puts ""
+    #     self.pick_borough(date)
+    # end
+    # def queens_stats(date)
+    #     puts ""
+    #     puts "The number of positive cases for #{"#{date.date_of_interest}".light_blue} in Queens is: #{"#{date.qn_case_count}".red}."
+    #     puts "The number of people hospitalized within 14 days of diagnosis on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.qn_hospitalized_count}".red}."
+    #     puts "The number of deaths with a positive molecular test on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.qn_death_count}".red}."
+    #     puts ""
+    #     self.pick_borough(date)
+    # end
+    # def staten_island_stats(date)
+    #     puts ""
+    #     puts "The number of positive cases for #{"#{date.date_of_interest}".light_blue} in Staten Island is: #{"#{date.si_case_count}".red}."
     #     puts "The number of people hospitalized within 14 days of diagnosis on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.si_hospitalized_count}".red}."
     #     puts "The number of deaths with a positive molecular test on #{"#{date.date_of_interest}".light_blue} is: #{"#{date.si_death_count}".red}."
     #     puts ""
     #     self.pick_borough(date)
     # end
+
+    def stats(date, borough, initials)
+        puts ""
+        puts "The number of positive cases for #{date.date_of_interest.light_blue} in #{borough} is: #{date.send("#{initials}_case_count").red}."
+        puts "The number of people hospitalized within 14 days of diagnosis on #{date.date_of_interest.light_blue} is: #{date.send("#{initials}_hospitalized_count").red}."
+        puts "The number of deaths with a positive molecular test on #{date.date_of_interest.light_blue} is: #{date.send("#{initials}_death_count").red}."
+        puts ""
+        self.pick_borough(date)
+    end
 
 
 end

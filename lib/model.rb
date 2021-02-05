@@ -26,6 +26,11 @@ attr_accessor :date_of_interest, :case_count, :hospitalized_count, :death_count,
             kase.date_of_interest == date
         end
     end
+    def boroughs()
+        
+    end
+
+    
 
 end
 

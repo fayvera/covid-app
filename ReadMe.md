@@ -26,6 +26,7 @@ gem install httparty
 
 
 Once you have downloaded HTTParty and required all gems, run bundle install.
+To run the application run bin/run.
 
 
 
