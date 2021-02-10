@@ -60,7 +60,7 @@ class Cli
             else
                 puts "#{"Invalid response.".yellow}"
                 puts "#{"Please try again.".yellow}"
-                self.prompt_response
+                self.prompt_response(date)
             end
     end
 
