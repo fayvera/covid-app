@@ -27,5 +27,26 @@ attr_accessor :date_of_interest, :case_count, :hospitalized_count, :death_count,
         end
     end
 
+    # def self.all_models
+    #     @@all.sort do |a, b|
+    #         a.case_count <=> b.case_count
+    #     end
+    # end
+
+    def self.create_table
+        sql = <<-SQL
+        CREATE TABLE IF NOT EXISTS models (
+            id INTEGER PRIMARY KEY,
+            date_of_interest TEXT, case_count INTEGER, hospitalized_count INTEGER, death_count INTEGER, 
+bx_case_count INTEGER, bx_hospitalized_count INTEGER, bx_death_count INTEGER, 
+bk_case_count INTEGER, bk_hospitalized_count INTEGER, bk_death_count INTEGER, 
+mn_case_count INTEGER, mn_hospitalized_count INTEGER, mn_death_count INTEGER, 
+qn_case_count INTEGER, qn_hospitalized_count INTEGER, qn_death_count INTEGER, 
+si_case_count INTEGER, si_hospitalized_count INTEGER, si_death_count INTEGER
+        )
+        SQL
+        DB[:conn].execute(sql)
+    end
+
 end
 
